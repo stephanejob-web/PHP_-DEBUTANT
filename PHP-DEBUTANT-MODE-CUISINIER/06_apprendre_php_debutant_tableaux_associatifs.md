@@ -1,297 +1,357 @@
-# 🍳 Cours PHP pour Débutant – Les Tableaux (Arrays) 🥐🧠
+# 🍳 Cours PHP pour Débutant – Les Tableaux Associatifs (Clés / Valeurs) 👨‍🍳
 
-## 👋 Introduction
+## 🧂 Pourquoi les tableaux sont très importants
 
-Dans ta cuisine, tu as **plein d'ingrédients sur ton plan de travail** : des œufs, du sucre, de la farine 🥚🍬🌾  
-Tu pourrais créer une variable pour chaque ingrédient :
+Avant de cuisiner, il faut tout préparer 👩‍🍳  
+Ce que tu vas apprendre ici, c’est un des **ingrédients de base** de la programmation :  
+➡️ Les **tableaux**, c’est comme ton **plan de travail en cuisine**.
 
+C’est grâce à eux que tu peux :
+- ranger tes ingrédients,  
+- les retrouver facilement,  
+- et préparer ta recette sans tout mélanger.
+
+Sans tableaux, tu devrais créer une variable pour chaque ingrédient 😩  
 ```php
 $ingredient1 = "œufs";
-$ingredient2 = "sucre";
-$ingredient3 = "farine";
+$ingredient2 = "farine";
+$ingredient3 = "lait";
 ```
 
-Mais si tu fais un gâteau avec **20 ingrédients** ? 😱  
-Ce serait beaucoup trop long !
+Mais avec un tableau :
+```php
+$ingredients = ["œufs", "farine", "lait"];
+```
 
-👉 C’est pour ça qu’en PHP, on utilise les **tableaux** (*arrays*).  
-Un **tableau**, c’est comme ton **plan de travail** 🍽️ : tu peux y ranger **plusieurs ingrédients à la fois**.
+💬 En résumé :
+> Les tableaux, c’est ta **mise en place**.  
+> Bien rangés, ta recette (ton code) devient simple, rapide et délicieuse !
 
 ---
 
-## 🧺 1️⃣ Créer un tableau
+## 👩‍🍳 1️⃣ Rappel : les tableaux simples
 
 ```php
-$ingredients = ["œufs", "sucre", "farine"];
+$ingredients = ["œufs", "farine", "lait"];
 ```
 
-💬 Tu peux lire ça comme :  
-> “Mon plan de travail contient trois ingrédients.”
-
----
-
-## 🔢 2️⃣ Les crochets [ ] et les numéros
-
-Chaque ingrédient du tableau a un **numéro d’emplacement (index)**.
-
-| Emplacement (index) | Ingrédient |
+| Numéro (index) | Ingrédient |
 |----------------|-------------|
 | 0 | œufs |
-| 1 | sucre |
-| 2 | farine |
+| 1 | farine |
+| 2 | lait |
 
-💡 En PHP, les cases commencent à **zéro**.  
-Donc la première case, c’est **[0]**.
-
----
-
-## 👀 3️⃣ Afficher un ingrédient précis
-
-Tu veux voir ce qu’il y a dans une case ?
-
+Pour afficher le deuxième ingrédient :
 ```php
-echo $ingredients[0];
-```
-Résultat :
-```
-œufs
-```
-
-Autres exemples :
-```php
-echo $ingredients[1]; // sucre
-echo $ingredients[2]; // farine
-```
-
-💬 Les crochets `[0]` signifient :  
-> “Regarde dans la case numéro 0 de ton plan de travail.”
-
----
-
-## 🔁 4️⃣ Parcourir tous les ingrédients avec `foreach`
-
-Tu veux voir **tous tes ingrédients** ?  
-Utilise une boucle `foreach` :
-
-```php
-$ingredients = ["œufs", "sucre", "farine"];
-
-foreach ($ingredients as $element) {
-    echo "J’ajoute $element à ma recette<br>";
-}
-```
-
-Résultat :
-```
-J’ajoute œufs à ma recette  
-J’ajoute sucre à ma recette  
-J’ajoute farine à ma recette
-```
-
-💬 Tu peux lire ça comme :  
-> “Pour chaque ingrédient de mon plan de travail, affiche son nom.”
-
----
-
-## ➕ 5️⃣ Ajouter un nouvel ingrédient
-
-Tu veux ajouter du **beurre** à ta recette :
-```php
-$ingredients[] = "beurre";
-```
-💬 Les crochets vides `[]` signifient :  
-> “Ajoute l’ingrédient **à la fin du tableau**.” 🧈
-
----
-
-## 🔄 6️⃣ Modifier un ingrédient
-
-Tu veux remplacer “sucre” par “sucre roux” :
-```php
-$ingredients[1] = "sucre roux";
-```
-💬 Cela veut dire :  
-> “Dans la case numéro 1, remplace ce qu’il y a.”
-
----
-
-## 📊 7️⃣ Compter le nombre d’ingrédients avec `count()`
-
-Tu veux savoir **combien d’ingrédients** tu as :
-```php
-echo count($ingredients);
-```
-
-Résultat :
-```
-3
-```
-
-💬 `count()` signifie :  
-> “Compte combien d’éléments il y a sur mon plan de travail.”
-
----
-
-## ⚙️ 8️⃣ Exemple complet
-
-```php
-$ingredients = ["œufs", "sucre", "farine"];
-
-$ingredients[] = "beurre";
-$ingredients[1] = "sucre roux";
-
-foreach ($ingredients as $element) {
-    echo "Ingrédient : $element<br>";
-}
-
-echo "Nombre total d’ingrédients : " . count($ingredients);
-```
-
-Résultat :
-```
-Ingrédient : œufs  
-Ingrédient : sucre roux  
-Ingrédient : farine  
-Ingrédient : beurre  
-Nombre total d’ingrédients : 4
-```
-
----
-
-## 🧩 9️⃣ Résumé version cuisine
-
-| Code | Signification | Exemple |
-|------|----------------|----------|
-| `[]` | Crée ton plan de travail | `$ingredients = ["œufs", "sucre"];` |
-| `[0]` | Premier ingrédient | `$ingredients[0]` |
-| `[1]` | Deuxième ingrédient | `$ingredients[1]` |
-| `[] =` | Ajoute un ingrédient à la fin | `$ingredients[] = "beurre";` |
-| `[n] =` | Modifie un ingrédient | `$ingredients[1] = "sucre roux";` |
-| `count()` | Compte les ingrédients | `count($ingredients)` |
-| `foreach` | Parcourt la recette | `foreach ($ingredients as $element)` |
-
-💬 Retiens bien :  
-> Les crochets `[ ]` = “regarde dans la case”,  
-> Le nombre = “l’emplacement”,  
-> Et **on commence à 0** (comme les bols sur le plan de travail). 👨‍🍳
-
----
-
-# 🧪 Exercices pratiques (niveau cuisine)
-
-### Exercice 1
-Crée un tableau `$ingredients` avec :  
-`œufs`, `sucre`, `farine`.  
-Affiche chaque ingrédient avec `echo`.
-
----
-
-### Exercice 2
-Affiche seulement le **deuxième** ingrédient (`sucre`).
-
----
-
-### Exercice 3
-Ajoute `beurre` à ton tableau `$ingredients`  
-et affiche tous les ingrédients avec `foreach`.
-
----
-
-### Exercice 4
-Remplace `sucre` par `sucre roux`.
-
----
-
-### Exercice 5
-Affiche combien d’ingrédients tu as sur ton plan de travail avec `count()`.
-
----
-
-### Exercice 6
-Crée un tableau `$chefs = ["Laurent", "Julie", "Marc"];`  
-et affiche :  
-> “Le chef [nom] entre en cuisine.”  
-pour chacun.
-
----
-
-### Exercice 7
-Crée un tableau `$ustensiles = ["Couteau", "Fouet", "Spatule"];`  
-et affiche chaque ustensile avec `foreach`.
-
----
-
-### Exercice 8
-Change `Spatule` par `Maryse`  
-puis ajoute `Cuillère en bois` à la fin.
-
----
-
-### Exercice 9
-Crée un tableau `$quantites = [2, 5, 3];`  
-Chaque valeur représente un nombre de cuillères à soupe.  
-Affiche le total :  
-> “J’ai utilisé X cuillères à soupe au total.”
-
-💡 Indice : additionne `$quantites[0] + $quantites[1] + $quantites[2]`.
-
----
-
-### Exercice 10
-Crée un tableau `$etapes = ["Préparer la pâte", "Faire cuire", "Dresser le dessert"];`  
-et affiche :
-```
-Étape 1 : Préparer la pâte  
-Étape 2 : Faire cuire  
-Étape 3 : Dresser le dessert
-```
-
-💡 Astuce : avant la boucle, crée `$i = 1;` et fais `$i++` à chaque tour.
-
----
-
-## ✅ Solutions
-
-```php
-// 1
-$ingredients = ["œufs", "sucre", "farine"];
-echo $ingredients[0] . "<br>" . $ingredients[1] . "<br>" . $ingredients[2];
-
-// 2
 echo $ingredients[1];
+```
+➡️ Résultat : `farine`
 
-// 3
-$ingredients[] = "beurre";
-foreach ($ingredients as $element) { echo "$element<br>"; }
+Mais tu vois le souci ?  
+Tu dois **te souvenir du numéro**.  
+Et en cuisine, se rappeler que la farine est en “case 1”, c’est pas pratique 😅  
 
-// 4
-$ingredients[1] = "sucre roux";
+---
 
-// 5
-echo "J’ai " . count($ingredients) . " ingrédients sur mon plan de travail.";
+## 🍲 2️⃣ Les tableaux associatifs
 
-// 6
-$chefs = ["Laurent", "Julie", "Marc"];
-foreach ($chefs as $chef) { echo "Le chef $chef entre en cuisine.<br>"; }
+Dans ta cuisine, tu ne dis pas :
+> “Passe-moi l’ingrédient numéro 2.”
 
-// 7
-$ustensiles = ["Couteau", "Fouet", "Spatule"];
-foreach ($ustensiles as $u) { echo "Ustensile : $u<br>"; }
+Tu dis :
+> “Passe-moi la farine.”  
+> “Donne-moi le sucre.”
 
-// 8
-$ustensiles[2] = "Maryse";
-$ustensiles[] = "Cuillère en bois";
-foreach ($ustensiles as $u) { echo "$u<br>"; }
+C’est exactement ce qu’on appelle un **tableau associatif**.  
+➡️ Au lieu d’un numéro, chaque case a un **nom clair (clé)**.
 
-// 9
-$quantites = [2, 5, 3];
-echo "J’ai utilisé " . ($quantites[0] + $quantites[1] + $quantites[2]) . " cuillères à soupe au total.";
+---
 
-// 10
-$etapes = ["Préparer la pâte", "Faire cuire", "Dresser le dessert"];
-$i = 1;
-foreach ($etapes as $etape) {
-    echo "Étape $i : $etape<br>";
-    $i++;
+## 🧺 3️⃣ Créer un tableau associatif
+
+```php
+$ingredients = [
+    "base" => "pâte",
+    "sucre" => "cassonade",
+    "liquide" => "lait"
+];
+```
+
+| Catégorie (clé) | Contenu (valeur) |
+|------------------|------------------|
+| base | pâte |
+| sucre | cassonade |
+| liquide | lait |
+
+💬 Lis-le comme une phrase :
+> “Dans la catégorie **base**, j’ai de la **pâte**.”
+
+---
+
+## 🧂 4️⃣ Accéder à une valeur avec les crochets `[]`
+
+Tu veux savoir ce qu’il y a dans une catégorie ?  
+Tu ouvres le bon tiroir 👇
+
+```php
+echo $ingredients["sucre"];
+```
+➡️ Résultat : `cassonade`
+
+💬 PHP comprend :
+> “Va dans la case appelée **sucre**, et donne-moi ce qu’il y a dedans.”
+
+---
+
+## 🧁 5️⃣ Modifier ou ajouter des ingrédients
+
+Changer une valeur :
+```php
+$ingredients["sucre"] = "sucre glace";
+```
+
+Ajouter un nouveau tiroir :
+```php
+$ingredients["fruit"] = "fraise";
+```
+
+👏 Tu viens d’ajouter un nouveau tiroir à ton plan de travail !
+
+---
+
+## 🍳 6️⃣ Voir tout ton plan de travail
+
+```php
+print_r($ingredients);
+```
+
+Résultat :
+```
+Array
+(
+    [base] => pâte
+    [sucre] => sucre glace
+    [liquide] => lait
+    [fruit] => fraise
+)
+```
+
+---
+
+### 🤯 “Mais c’est quoi ce bazar ? J’ai la tête comme un fouet !”
+
+😂 Respire !  
+C’est **normal** de se mélanger les fouets au début.  
+Mais comme une recette, il faut juste **suivre les étapes**.  
+Et à force, tu verras : les tableaux deviendront ton **livre de cuisine préféré**.
+
+---
+
+# 🔁 7️⃣ La boucle `foreach` – Parcourir toutes les cases
+
+Tu pourrais ouvrir les tiroirs un par un...  
+Mais ce serait long, non ?  
+
+Heureusement, `foreach` fait le **tour de la cuisine** pour toi 🍴
+
+---
+
+## 👨‍🍳 A) Version simple : juste les valeurs
+
+```php
+$ingredients = ["œufs", "farine", "lait"];
+
+foreach ($ingredients as $ingredient) {
+    echo "J’ajoute $ingredient<br>";
 }
 ```
+
+💬 Ça veut dire :
+> “Pour chaque ingrédient dans la liste, fais quelque chose avec.”
+
+PHP fait ça dans sa tête :
+
+| Étape | `$ingredient` | Ce que PHP affiche |
+|--------|----------------|-------------------|
+| 1️⃣ | œufs | J’ajoute œufs |
+| 2️⃣ | farine | J’ajoute farine |
+| 3️⃣ | lait | J’ajoute lait |
+
+---
+
+## 🍽️ B) Version complète : les clés + les valeurs
+
+Maintenant, on veut aussi savoir **la catégorie** de chaque ingrédient 👇
+
+```php
+$ingredients = [
+    "base" => "pâte",
+    "sucre" => "cassonade",
+    "liquide" => "lait"
+];
+
+foreach ($ingredients as $categorie => $ingredient) {
+    echo "Dans la catégorie $categorie, j’ai $ingredient.<br>";
+}
+```
+
+Résultat :
+```
+Dans la catégorie base, j’ai pâte  
+Dans la catégorie sucre, j’ai cassonade  
+Dans la catégorie liquide, j’ai lait
+```
+
+---
+
+## 🍴 Comprendre `$ingredients as $categorie => $ingredient`
+
+Bon, on y est 😅  
+C’est la ligne qui fait mal à la tête au début, mais c’est super simple une fois qu’on comprend.
+
+On peut la lire comme une phrase :
+> “Pour chaque tiroir dans `$ingredients`,  
+> mets le **nom du tiroir** dans `$categorie`,  
+> et ce qu’il contient dans `$ingredient`.”
+
+### Exemple :
+```php
+"sucre" => "cassonade"
+```
+- `"sucre"` = la **clé** (le tiroir)
+- `"cassonade"` = la **valeur** (ce qu’il y a dedans)
+
+| Étape | `$categorie` | `$ingredient` |
+|--------|----------------|----------------|
+| 1️⃣ | base | pâte |
+| 2️⃣ | sucre | cassonade |
+| 3️⃣ | liquide | lait |
+
+---
+
+### 🍓 Pourquoi on choisit ces noms-là ?
+
+Tu pourrais écrire :
+```php
+foreach ($ingredients as $toto => $truc)
+```
+PHP comprendrait.  
+Mais bon… imagine une recette écrite comme ça 😅  
+> “Mets le $truc du $toto dans la poêle.”
+
+C’est pas très clair, hein ?
+
+En programmation comme en cuisine :
+> Si tu nommes bien tes ingrédients, tu ne te trompes pas de casserole 🍲
+
+Donc ici :
+- `$ingredients` → la cuisine entière (le tableau)
+- `$categorie` → le tiroir (clé)
+- `$ingredient` → ce qu’il y a dedans (valeur)
+
+---
+
+### 🤯 “Mais chef, j’en peux plus !”
+
+😂 C’est normal !  
+La première fois qu’on apprend ça, on veut tout balancer par la fenêtre.  
+Mais courage 👏  
+> Comme une pâte à crêpes, ça demande un peu de pratique au début,  
+> et après, ça devient naturel !
+
+---
+
+## 🧁 Résumé
+
+| Avant | Maintenant |
+|--------|-------------|
+| `$ingredients = ["œufs", "farine"];` | `$ingredients = ["sucre" => "cassonade", "base" => "pâte"];` |
+| `foreach ($ingredients as $ingredient)` | `foreach ($ingredients as $categorie => $ingredient)` |
+| Juste la valeur | Nom + valeur |
+| Lecture : “œufs” | Lecture : “Dans la catégorie sucre, j’ai cassonade” |
+
+---
+
+## 🧠 Phrase à retenir
+
+> Un **tableau associatif**, c’est comme une **cuisine bien rangée** :  
+> chaque **tiroir a un nom (clé)** et **un contenu (valeur)**.  
+> Et la boucle **`foreach`** te permet de **tout parcourir sans perdre le fil** 👨‍🍳
+
+---
+
+# 🧪 Exercices (mode cuisine 🍰)
+
+## Exercice 1
+Crée un tableau `$ingredients` :
+- sucre → 500  
+- farine → 1000  
+- œufs → 6  
+et affiche la quantité de sucre.
+
+### ✅ Solution :
+```php
+$ingredients = ["sucre" => 500, "farine" => 1000, "œufs" => 6];
+echo $ingredients["sucre"];
+```
+
+## Exercice 2
+Ajoute `"beurre" => 250` au tableau `$ingredients`.
+
+## Exercice 3
+Change la quantité de farine à 800.
+
+## Exercice 4
+Crée un tableau `$recettes` :
+- gâteau → "en préparation"
+- crêpes → "terminé"
+- tarte → "en attente"  
+et affiche chaque recette et son état avec `foreach`.
+
+## Exercice 5
+Crée un tableau `$ustensiles` :
+- fouet → "mélange"
+- spatule → "cuisson"
+- couteau → "découpe"  
+et affiche :  
+“L’ustensile [nom] sert pour la [catégorie].”
+
+## Exercice 6
+Compte combien d’ustensiles contient ton tableau `$ustensiles`.
+
+## Exercice 7
+Crée un tableau `$prix` :
+- farine → 2
+- œufs → 3
+- lait → 1  
+et calcule le total.
+
+## Exercice 8
+Crée un tableau `$stock` :
+- beurre → 2  
+- sucre → 5  
+- farine → 3  
+et affiche : “J’ai [nombre] paquets de [aliment].”
+
+## Exercice 9
+Crée un tableau `$recette` :
+- nom → "Crêpes"
+- nb_portions → 4
+- temps → 20  
+et affiche :  
+“La recette Crêpes sert 4 personnes en 20 minutes.”
+
+## Exercice 10
+Crée un tableau `$menu` :
+- entrée → "salade"
+- plat → "poulet rôti"
+- dessert → "tarte aux pommes"  
+et affiche tout avec `foreach`.
+
+---
+
+## 👨‍🍳 En conclusion
+
+> Les tableaux associatifs, c’est comme une cuisine bien organisée.  
+> Tu sais **où est chaque chose**, tu peux **retrouver un ingrédient** facilement,  
+> et préparer une **recette (ton programme)** sans te tromper d’ingrédient !
