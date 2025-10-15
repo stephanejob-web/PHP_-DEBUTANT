@@ -58,6 +58,37 @@ C’est comme une **phrase magique en trois étapes** ✨
 
 ---
 
+### 🔎 Zoom sur `$i` — le compteur du chantier 🧰
+
+> 💬 `$i` n’est **pas un mot magique** de PHP.  
+> C’est simplement **une variable** qu’on utilise pour **compter** les tours de boucle.
+
+Les programmeurs utilisent souvent `$i` car ça vient du mot anglais *“iteration”* (tour de boucle).  
+Mais tu peux l’appeler comme tu veux ! 😄
+
+Par exemple :
+
+```php
+for ($brique = 1; $brique <= 10; $brique++) {
+    echo "Je pose la brique numéro $brique<br>";
+}
+```
+
+ou même :
+
+```php
+for ($tour = 1; $tour <= 10; $tour++) {
+    echo "Je pose la brique numéro $tour<br>";
+}
+```
+
+👉 PHP s’en fiche du nom, tant que c’est **le même dans les trois parties** du `for`.
+
+🧠 Retient ceci :  
+> `$i`, `$brique`, ou `$tour`, c’est juste une **étiquette** qui sert à se souvenir où on en est dans la boucle.
+
+---
+
 ### 🔹 1️⃣ `$i = 1` — Le départ
 
 Tu dis à ton apprenti :
@@ -81,16 +112,19 @@ Alors la boucle s’arrête **toute seule**.
 
 ### 🔹 3️⃣ `$i++` — Le pas en avant
 
-C’est ton petit **pas de maçon** 👣
+C’est ton petit **pas de maçon** 👣  
 
-Chaque fois que tu poses une brique, tu avances d’une place.
-
-`$i++` veut dire :
-> “Ajoute 1 à `$i`.”
+Chaque fois que tu poses une brique, tu avances d’une place.  
 
 🧠 Astuce :  
-Le `++`, c’est comme si tu marchais sur le mur :  
-> Un “+” pour le pied gauche, un “+” pour le pied droit 😄
+Le `++` veut dire **“ajoute 1”** à ta variable.  
+Ton compteur `$i` passe donc de 1 à 2, puis 3, puis 4… automatiquement.  
+
+Et si tu te demandes :  
+> “Mais c’est quoi ce bordel de deux + à la suite ?! 🤨”  
+
+Pas de panique, c’est juste la façon de PHP de dire :  
+> “Eh ! Ajoute 1 et continue ton boulot, chef !” 😆  
 
 ---
 
@@ -137,7 +171,7 @@ Je porte le sac de ciment numéro 5
 
 ---
 
-## 🧱 En résumé drôle mais vrai
+## 🧱 En résumé
 
 | Élément | Rôle sur le chantier |
 |----------|----------------------|
@@ -145,6 +179,7 @@ Je porte le sac de ciment numéro 5
 | `$i <= 10` | Tu **poses** jusqu’à la 10e brique 🔟 |
 | `$i++` | Tu **avances d’un pas** 👣 |
 | `for` | Tu **répètes le travail** sans râler 😅 |
+| `$i` | C’est ton **compteur de chantier** 🧰 |
 
 ---
 
