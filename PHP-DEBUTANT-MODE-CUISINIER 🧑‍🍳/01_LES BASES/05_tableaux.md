@@ -22,7 +22,7 @@ Un **tableau**, c’est comme ton **plan de travail** 🍽️ : tu peux y ranger
 ## 🧺 1️⃣ Créer un tableau
 
 ```php
-$ingredients = ["œufs", "sucre", "farine"];
+$plan_de_travail = ["œufs", "sucre", "farine"];
 ```
 
 💬 Tu peux lire ça comme :  
