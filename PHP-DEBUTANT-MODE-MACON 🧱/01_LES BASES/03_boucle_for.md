@@ -1,6 +1,8 @@
-# 🧱 Cours PHP pour Débutant – La Boucle `for` 😅👷‍♂️
+# 🤯 La boucle for – Ce sortilège qui fait tourner les têtes (et le code) 😅
 
 ---
+💬 “Pourquoi les débutants ont peur de la boucle for ?”
+Parce qu’elle tourne en rond, et eux aussi ! 😂
 
 ## 🚧 Pourquoi une boucle ?
 
